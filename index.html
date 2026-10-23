@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="A practical cooking schedule from the durations you enter, with resting time, timers and shared-resource checks."
+    />
+    <meta name="color-scheme" content="light" />
+    <title>Dinner finish-together</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workspace</a>
+    <header class="masthead">
+      <div class="eyebrow">Logan Pendragon Multiverse · local-first tools</div>
+      <h1>Dinner finish-together</h1>
+      <p>Work backwards from dinner.</p>
+      <p>
+        A practical cooking schedule from the durations you enter, with resting
+        time, timers and shared-resource checks.
+      </p>
+      <div class="version">Version 1.0.0 · No accounts · No uploads</div>
+    </header>
+    <main id="main" class="shell">
+      <div class="toolbar">
+        <button id="backup" type="button" class="secondary">
+          Download backup</button
+        ><label class="file-button"
+          >Import backup<input
+            id="import"
+            type="file"
+            accept="application/json,.json"
+            aria-label="Import backup JSON" /></label
+        ><button id="recover" type="button" class="danger" hidden>
+          Download original recovery bytes</button
+        ><button id="example" type="button" class="secondary">
+          Load example</button
+        ><button id="print" type="button" class="secondary">
+          Print / save PDF</button
+        ><button id="undo" type="button" class="secondary" hidden>
+          Undo last deletion / reset</button
+        ><span id="unsaved" class="status" role="status">Saved locally</span>
+      </div>
+      <div id="message" class="notice" role="alert" hidden></div>
+      <div class="layout">
+        <aside class="panel sidebar">
+          <h2>Meals</h2>
+          <button id="new" type="button">New meal</button>
+          <div id="records" class="records"></div>
+        </aside>
+        <div>
+          <section class="panel">
+            <div id="editor"></div>
+            <div id="preview" class="preview"></div>
+          </section>
+          <section class="panel">
+            <h2>Timers</h2>
+            <p class="hint">
+              Visual countdowns only, with no sound or notifications. They use
+              saved end times and catch up when this tab returns. No background
+              alarm runs. Use a separate kitchen timer when timing matters.
+            </p>
+            <div id="timers"></div>
+          </section>
+        </div>
+      </div>
+      <div id="print-sheet" class="print-sheet"></div>
+      <footer class="footer">
+        <p>
+          Your data stays in this browser. Browser storage can be cleared,
+          blocked or run out of space, and private browsing may discard it. It
+          does not sync across devices. Download backups regularly and before
+          changing browsers. Backups contain your private notes and photos. This
+          tool makes no network requests.
+        </p>
+        <p>
+          MIT licensed ·
+          <a
+            href="https://github.com/loganpendragonmultiverse/dinner-finish-together"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Source and documentation</a
+          >
+        </p>
+      </footer>
+    </main>
+    <dialog id="import-dialog" aria-labelledby="import-title">
+      <h2 id="import-title">Review backup replacement</h2>
+      <p id="import-summary"></p>
+      <p id="import-error" class="notice error" role="alert" hidden></p>
+      <p>
+        Nothing changes until you apply this replacement. Cancel keeps existing
+        data untouched.
+      </p>
+      <label class="confirm"
+        ><input id="replace-confirm" type="checkbox" /><span
+          >I understand this replaces all saved records in this browser.</span
+        ></label
+      >
+      <div class="actions">
+        <button id="apply-import" type="button">Apply replacement</button
+        ><button id="cancel-import" type="button" class="secondary">
+          Cancel import
+        </button>
+      </div>
+    </dialog>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

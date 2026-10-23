@@ -1,0 +1,43 @@
+{
+  "app": "dinner-finish-together",
+  "version": 1,
+  "data": {
+    "meals": [
+      {
+        "id": "example-meal",
+        "name": "Sunday dinner",
+        "target": "2026-10-25T18:30",
+        "tasks": [
+          {
+            "id": "roast",
+            "name": "Roasted vegetables",
+            "cook": 45,
+            "rest": 5,
+            "resourceType": "oven",
+            "resource": "Main oven",
+            "temp": 200
+          },
+          {
+            "id": "pie",
+            "name": "Vegetable pie",
+            "cook": 35,
+            "rest": 10,
+            "resourceType": "oven",
+            "resource": "Main oven",
+            "temp": 180
+          },
+          {
+            "id": "peas",
+            "name": "Peas",
+            "cook": 8,
+            "rest": 0,
+            "resourceType": "exclusive",
+            "resource": "Small hob",
+            "temp": null
+          }
+        ]
+      }
+    ],
+    "timers": []
+  }
+}

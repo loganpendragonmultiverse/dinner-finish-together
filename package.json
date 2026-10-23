@@ -1,0 +1,19 @@
+{
+  "name": "dinner-finish-together",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "A practical cooking schedule from the durations you enter, with resting time, timers and shared-resource checks.",
+  "scripts": {
+    "test": "node --test test/core.test.js test/vault.test.js",
+    "check": "node scripts/check.mjs && prettier --check .",
+    "build": "node scripts/build.mjs",
+    "test:browser": "playwright test",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "prettier": "3.9.10"
+  }
+}
