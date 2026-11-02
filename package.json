@@ -6,7 +6,7 @@
   "license": "MIT",
   "description": "A practical cooking schedule from the durations you enter, with resting time, timers and shared-resource checks.",
   "scripts": {
-    "test": "node --test test/core.test.js test/vault.test.js",
+    "test": "node --test test/core.test.js test/vault.test.js scripts/static-test-server.test.mjs",
     "check": "node scripts/check.mjs && prettier --check .",
     "build": "node scripts/build.mjs",
     "test:browser": "playwright test",
